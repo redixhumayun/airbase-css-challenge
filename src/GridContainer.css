@@ -1,0 +1,65 @@
+img {
+  width: 100%;
+  height: auto;
+}
+
+/*Setting up the default grid*/
+.grid {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/*Style each cell inside the grid*/
+.grid > div {
+  padding: 5px 10px 5px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/*Remove the border bottom for the last two div children to prevent double border*/
+.grid > div:nth-last-child(1), .grid > div:nth-last-child(2) {
+  border-bottom: none;
+}
+
+/*Create a row display with flexbox*/
+.div-row {
+  display: flex;
+  flex-direction: row
+}
+
+/*******************************************
+*Create an inner grid to display annual cost
+*Method seems a little hacky
+********************************************/
+.grid .inner-grid {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.inner-grid .div-row {
+  align-items: center;
+  justify-content: space-around;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/*Create a flex container to vertically align number of months*/
+.inner-grid > div:first-child {
+  display: flex;
+  align-items: center;
+}
+
+/*Font styling for values in cells*/
+.grid p {
+  font-family: Helvetica;
+  font-size: 14px;
+  color: #222222;
+  letter-spacing: 0;
+}
+
+/*Font styling for keys in cells to reduce opacity*/
+.grid .p-font-styling {
+  opacity: 0.5;
+}

@@ -1,32 +1,104 @@
+/*Default styling for body*/
+body {
+  background: rgba(34,34,34,0.05);
+}
+
 .App {
-  text-align: center;
+  margin: 0 auto;
+  width: 1000px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*Create a row display with flexbox*/
+.div-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row
+}
+
+/*Using this combination to provide margins for logo and lock icon*/
+.icon {
+  margin-top: 15px;
+}
+
+/*Styling the security icon and its inline text*/
+.security {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.security > p {
+  font-family: Helvetica;
+  font-size: 12px;
+  color: rgba(34,34,34,0.50);
+  letter-spacing: 0;
+  margin-left: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*Styling for the main container on the page*/
+.data-container {
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px 0 rgba(34,34,34,0.10);
+}
+
+/*Styling for the service provider bill has been generated for*/
+.service-provider-container-wrapper {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.service-provider-container {
+  align-items: center;
+  padding: 15px 15px 15px 25px;
+}
+
+.service-provider-container > p {
+  font-family: Helvetica;
+  font-size: 16px;
+  letter-spacing: 0;
+  margin-left: 15px;
+}
+
+/*Styling for the CSS grid on the left*/
+.grid-container-btn-parent {
+  padding-left: 15px;
+  width: 55%;
+}
+
+/*Styling for the content of the approvers on the right*/
+.approver-layout-parent {
+  flex: 1;
+  margin-top: -16px;
+  margin-left: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+/*Button Styles*/
+.btn-container {
+  margin: 15px auto;
+}
+
+.btn {
+  width: 84px;
+  height: 32px;
+  border-radius: 10px;
+  font-family: Helvetica;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.btn:first-child {
+  margin-right: 10px;
+}
+
+.btn-green {
+  background: #26C281;
+  border: 1px solid rgba(34,34,34,0.10);
+}
+
+.btn-red {
+  background: #FF6448;
+  border: 1px solid rgba(34,34,34,0.10);
 }
