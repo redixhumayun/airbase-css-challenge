@@ -7,7 +7,7 @@ const GridContainer = ({ data }) => {
       <div><p className="p-font-styling">Requested By</p></div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <div style={{ width: '25px', height: '25px', marginRight: '15px' }}>
-          <img src={data.requested_by.profile_picture}/>
+          <img src={data.requested_by.profile_picture} alt={''}/>
         </div>
         <p>{`${data.requested_by.first_name} ${data.requested_by.last_name}`}</p>
       </div>

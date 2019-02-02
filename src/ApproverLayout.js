@@ -6,14 +6,14 @@ const ApproverLayout = ({ data }) => {
   return dataSortedByApprovers.map((data, index) => {
     const date = new Date(data.last_updated_date).toDateString().split(' ').slice(1).join(' ')
     return (
-      <div className="approver-container">
+      <div className="approver-container" key={date + index}>
         <p className="status-header">{data.status}</p>
         <div className="approver-item">
           <div className="number-display">
             <p>{index + 1}</p>
           </div>
           <div className="image-container">
-            <img src={data.approver.profile_picture}/>
+            <img src={data.approver.profile_picture} alt={''}/>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div className="approver-item">
@@ -52,6 +52,9 @@ const seperateApprovers = (data) => {
       case 'pending':
         approver.status = 'Pending'
         approver.dateToDisplay = new Date(data.last_notified_time).toDateString().split(' ').slice(1).join(' ')
+        break
+      default:
+        return null
     }
     return approver
   })

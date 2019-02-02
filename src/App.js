@@ -10,13 +10,15 @@ class App extends Component {
     return (
       <div className="App">
         <div className="div-row icon">
-          <div style={{ width: '25px', height: '25px' }}><img src={process.env.PUBLIC_URL + '/assets/logo.svg'} /></div>
+          <div style={{ width: '25px', height: '25px' }}>
+            <img src={process.env.PUBLIC_URL + '/assets/logo.svg'} alt={''}/>
+          </div>
           <div style={{ width: '75px', marginLeft: '10px' }}>
-            <img src={process.env.PUBLIC_URL + '/assets/airbaselogo.svg'}/>
+            <img src={process.env.PUBLIC_URL + '/assets/airbaselogo.svg'} alt={''}/>
           </div>
         </div>
         <div className="div-row icon security">
-          <div><img src={process.env.PUBLIC_URL + '/assets/lockicon.svg'} /></div>
+          <div><img src={process.env.PUBLIC_URL + '/assets/lockicon.svg'} alt={''}/></div>
           <p>Security Message</p>
           <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
         </div>
@@ -24,7 +26,7 @@ class App extends Component {
           <div className="service-provider-container-wrapper">
             <div className="div-row service-provider-container">
               <div style={{ width: '30px', height: '30px' }}>
-                <img src={data.service.logo} />
+                <img src={data.service.logo} alt={''}/>
               </div>
               <p>{data.description}</p>
             </div>
