@@ -2,7 +2,7 @@ import React from 'react'
 import './ApproverLayout.css'
 
 const ApproverLayout = ({ data }) => {
-  const dataSortedByApprovers = seperateApprovers({ data })
+  const dataSortedByApprovers = seperateApprovers(data)
   return dataSortedByApprovers.map((data, index) => {
     const date = new Date(data.last_updated_date).toDateString().split(' ').slice(1).join(' ')
     return (
@@ -18,9 +18,9 @@ const ApproverLayout = ({ data }) => {
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div className="approver-item">
               <p className="p-with-margin-removed">{data.approver.first_name} {data.approver.last_name}</p>
-              <p className="p-with-margin-removed approver-details" style={{ fontSize: '0.75em' }}>({data.approver.email})</p>
+              <p className="p-with-margin-removed approver-details">({data.approver.email})</p>
             </div>
-            <p className="p-with-margin-removed approver-details" style={{ fontSize: '0.75em' }}>Approved {date}</p>
+            <p className="p-with-margin-removed approver-details">Approved {date}</p>
           </div>
         </div>
       </div>
@@ -28,7 +28,13 @@ const ApproverLayout = ({ data }) => {
   })
 }
 
-const seperateApprovers = ({ data }) => {
+/**
+ * Sorts the array of approvers based on status and 
+ * associates them with the correct date in the required format
+ * @param {Object} data 
+ * @return {Array}
+ */
+const seperateApprovers = (data) => {
   return data.approvers.sort(function (a, b) {
     if (a.status < b.status) return -1;
     if (a.status > b.status) return 1;

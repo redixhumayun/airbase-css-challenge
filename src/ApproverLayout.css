@@ -1,3 +1,9 @@
+img {
+  width: 100%;
+  height: auto;
+}
+
+/*Styling the header for each status*/
 .status-header {
   opacity: 0.5;
   font-family: Helvetica;
@@ -6,11 +12,13 @@
   letter-spacing: 0;
 }
 
+/*Wrapping container for the approvers*/
 .approver-container {
   border-bottom: 1px solid rgba(0,0,0,0.1);
   padding-bottom: 15px;
 }
 
+/*Each individual item where an approver is rendered*/
 .approver-item {
   display: flex;
   flex-direction: row;
@@ -34,11 +42,14 @@
   width: 25px;
 }
 
+/*Styling to remove any margins associated with specific p tags
+so approver image and details align*/
 .p-with-margin-removed {
   margin-top: 0;
   margin-bottom: 0;
 }
 
+/*Styling the number displayed next to each approver*/
 .number-display {
   background: rgba(34,34,34,0.10);
   border: none;

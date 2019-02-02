@@ -3,6 +3,13 @@ body {
   background: rgba(34,34,34,0.05);
 }
 
+/*Default styling for images*/
+img {
+  width: 100%;
+  height: auto;
+}
+
+/*Centering top level container*/
 .App {
   margin: 0 auto;
   width: 1000px;
