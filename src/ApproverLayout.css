@@ -76,3 +76,9 @@ img {
   letter-spacing: 0;
   text-align: center;
 }
+
+/*Aligning the tick icon correctly*/
+.tick-icon {
+  margin-right: 0px;
+  margin-left: auto;
+}

@@ -25,12 +25,12 @@ const ApproverLayout = ({ data }) => {
           </div>
           {
             data.status === 'Approved' && (
-              <div><img src={process.env.PUBLIC_URL + '/assets/tickicon.svg'} /></div>
+              <div className="tick-icon"><img src={process.env.PUBLIC_URL + '/assets/tickicon.svg'} /></div>
             )
           }
           {
             data.status === 'Pending' && (
-              <div><img src={process.env.PUBLIC_URL + '/assets/notickicon.svg'} /></div>
+              <div className="tick-icon"><img src={process.env.PUBLIC_URL + '/assets/notickicon.svg'} /></div>
             )
           }
         </div>
