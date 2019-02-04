@@ -5,7 +5,7 @@ const GridContainer = ({ data }) => {
   return (
     <div className="grid">
       <div><p className="p-font-styling">Requested By</p></div>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div>
         <div style={{ width: '25px', height: '25px', marginRight: '15px' }}>
           <img src={data.requested_by.profile_picture} alt={''}/>
         </div>

@@ -3,6 +3,7 @@ import './ApproverLayout.css'
 
 const ApproverLayout = ({ data }) => {
   const dataSortedByApprovers = seperateApprovers(data)
+  console.log(dataSortedByApprovers)
   return dataSortedByApprovers.map((data, index) => {
     const date = new Date(data.last_updated_date).toDateString().split(' ').slice(1).join(' ')
     return (
@@ -13,15 +14,25 @@ const ApproverLayout = ({ data }) => {
             <p>{index + 1}</p>
           </div>
           <div className="image-container">
-            <img src={data.approver.profile_picture} alt={''}/>
+            <img src={data.approver.profile_picture} alt={''} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div className="approver-item">
-              <p className="p-with-margin-removed">{data.approver.first_name} {data.approver.last_name}</p>
-              <p className="p-with-margin-removed approver-details">({data.approver.email})</p>
+            <div style={{ display: 'flex', flexDirection: 'row' }}>
+              <p className="approver-name">{data.approver.first_name} {data.approver.last_name}</p>
+              <p className="approver-details">({data.approver.email})</p>
             </div>
-            <p className="p-with-margin-removed approver-details">Approved {date}</p>
+            <p className="approver-details">Approved {date}</p>
           </div>
+          {
+            data.status === 'Approved' && (
+              <div><img src={process.env.PUBLIC_URL + '/assets/tickicon.svg'} /></div>
+            )
+          }
+          {
+            data.status === 'Pending' && (
+              <div><img src={process.env.PUBLIC_URL + '/assets/notickicon.svg'} /></div>
+            )
+          }
         </div>
       </div>
     )
@@ -40,7 +51,7 @@ const seperateApprovers = (data) => {
     if (a.status > b.status) return 1;
     return 0;
   }).map(approver => {
-    switch(approver.status) {
+    switch (approver.status) {
       case 'accepted':
         approver.status = 'Approved'
         approver.dateToDisplay = new Date(data.last_updated_date).toDateString().split(' ').slice(1).join(' ')

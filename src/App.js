@@ -10,28 +10,26 @@ class App extends Component {
     return (
       <div className="App">
         <div className="div-row icon">
-          <div style={{ width: '25px', height: '25px' }}>
-            <img src={process.env.PUBLIC_URL + '/assets/logo.svg'} alt={''}/>
+          <div style={{ width: '22.47px', height: '23.83px' }}>
+            <img src={process.env.PUBLIC_URL + '/assets/logo.svg'} alt={''} />
           </div>
-          <div style={{ width: '75px', marginLeft: '10px' }}>
-            <img src={process.env.PUBLIC_URL + '/assets/airbaselogo.svg'} alt={''}/>
+          <div style={{ width: '65px', height: '16px', marginLeft: '8.35px' }}>
+            <img src={process.env.PUBLIC_URL + '/assets/airbaselogo.svg'} alt={''} />
           </div>
         </div>
-        <div className="div-row icon security">
-          <div><img src={process.env.PUBLIC_URL + '/assets/lockicon.svg'} alt={''}/></div>
+        <div className="div-row security">
+          <div><img src={process.env.PUBLIC_URL + '/assets/lockicon.svg'} alt={''} /></div>
           <p>Security Message</p>
           <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
         </div>
         <div className="data-container">
-          <div className="service-provider-container-wrapper">
-            <div className="div-row service-provider-container">
-              <div style={{ width: '30px', height: '30px' }}>
-                <img src={data.service.logo} alt={''}/>
-              </div>
-              <p>{data.description}</p>
+          <div className="div-row service-provider-container">
+            <div style={{ width: '32px', height: '32px' }}>
+              <img src={data.service.logo} alt={''} />
             </div>
+            <p>{data.description}</p>
           </div>
-          <div className="div-row">
+          <div className="div-row grid-approval-container">
             <div className="grid-container-btn-parent">
               <GridContainer data={data} />
               <div className="btn-container">
@@ -40,7 +38,9 @@ class App extends Component {
               </div>
             </div>
             <div className="approver-layout-parent">
-              <ApproverLayout data={data} />
+              <div className="approver-layout">
+                <ApproverLayout data={data} />
+              </div>
             </div>
           </div>
         </div>

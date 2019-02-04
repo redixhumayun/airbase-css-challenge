@@ -12,10 +12,18 @@ img {
   border-radius: 5px;
 }
 
+/*Remove all margins for the p tags inside the grid*/
+.grid p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 /*Style each cell inside the grid*/
 .grid > div {
-  padding: 5px 10px 5px 10px;
+  padding: 12px 10px 12px 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
 }
 
 /*Remove the border bottom for the last two div children to prevent double border*/

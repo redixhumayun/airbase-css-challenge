@@ -1,6 +1,13 @@
 /*Default styling for body*/
 body {
   background: #F9FAFB;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter UI", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+/*Removing margin top and bottom styling for p tags*/
+p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /*Default styling for images*/
@@ -12,7 +19,7 @@ img {
 /*Centering top level container*/
 .App {
   margin: 0 auto;
-  width: 1000px;
+  width: 851px;
 }
 
 /*Create a row display with flexbox*/
@@ -23,12 +30,13 @@ img {
 
 /*Using this combination to provide margins for logo and lock icon*/
 .icon {
-  margin-top: 15px;
+  margin-top: 48px;
 }
 
 /*Styling the security icon and its inline text*/
 .security {
   align-items: center;
+  margin-top: 25px;
 }
 
 .security > p {
@@ -37,6 +45,8 @@ img {
   color: rgba(34,34,34,0.50);
   letter-spacing: 0;
   margin-left: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /*Styling for the main container on the page*/
@@ -44,45 +54,61 @@ img {
   background: #FFFFFF;
   border-radius: 10px;
   box-shadow: 0 2px 10px 0 rgba(34,34,34,0.10);
+  margin-top: 15px;
 }
 
 /*Styling for the service provider bill has been generated for*/
 .service-provider-container-wrapper {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height: 45px;
   margin-bottom: 16px;
 }
 
 .service-provider-container {
   align-items: center;
-  padding: 15px 15px 15px 25px;
+  padding: 16px 0px 20px 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .service-provider-container > p {
   font-family: Helvetica;
   font-size: 16px;
   letter-spacing: 0;
-  margin-left: 15px;
+  margin-left: 12px;
+  line-height: 19px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/*Styling for the overall container of the grid and approval layouts*/
+.grid-approval-container {
+  width: 100%;
+  height: 478px;
 }
 
 /*Styling for the CSS grid on the left*/
 .grid-container-btn-parent {
-  padding-left: 15px;
-  width: 55%;
+  padding-left: 16px;
+  width: 55.58%;
 }
 
 /*Styling for the content of the approvers on the right*/
 .approver-layout-parent {
-  flex: 1;
   margin-top: -16px;
-  margin-left: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-left: 1px solid rgba(0, 0, 0, 0.1)
+  margin-left: 16px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 16px;
+  width: 36.89%;
+}
+
+.approver-layout {
+  flex: 1;
 }
 
 /*Button Styles*/
 .btn-container {
-  margin: 15px auto;
+  margin: 13px auto 19px auto;
 }
 
 .btn {
