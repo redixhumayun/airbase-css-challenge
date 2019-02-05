@@ -4,26 +4,34 @@ img {
   height: auto;
 }
 
+/*Create a row display with flexbox*/
+.div-row {
+  display: flex;
+  flex-direction: row
+}
+
 /*Setting up the default grid*/
 .grid {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 32.203% 67.797%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
 
-/*Remove all margins for the p tags inside the grid*/
-.grid p {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 /*Style each cell inside the grid*/
 .grid > div {
-  padding: 12px 10px 12px 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
+}
+
+/*Styling odd and even cells differently to get pixel perfect width between them*/
+.grid > div:nth-child(odd) {
+  padding: 12px 10px 12px 16px;
+}
+
+.grid > div:nth-child(even) {
+  padding: 12px 10px 12px 6px;
 }
 
 /*Remove the border bottom for the last two div children to prevent double border*/
@@ -31,21 +39,19 @@ img {
   border-bottom: none;
 }
 
-/*Create a row display with flexbox*/
-.div-row {
-  display: flex;
-  flex-direction: row
-}
-
 /*******************************************
 *Create an inner grid to display annual cost
 *Method seems a little hacky
 ********************************************/
+
+/*Using important statements here to override default padding
+Overriding specificity may involve including classnames not defined in this stylesheet
+Tradeoff between separation and using important*/
 .grid .inner-grid {
   display: grid;
   grid-template-columns: 30% 70%;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .inner-grid .div-row {

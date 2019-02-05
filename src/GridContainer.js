@@ -16,7 +16,7 @@ const GridContainer = ({ data }) => {
       <div><p className="p-font-styling">Renewal Frequency</p></div>
       <div className="inner-grid">
         <div><p>{data.renewal_frequency_in_months} month</p></div>
-        <div className="div-row">
+        <div className="div-row" style={{ height: '100%' }}>
           <p className="p-font-styling">Annual Cost</p>
           <p>${data.cost * 12}</p>
         </div>

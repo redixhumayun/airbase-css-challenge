@@ -3,11 +3,9 @@ import './ApproverLayout.css'
 
 const ApproverLayout = ({ data }) => {
   const dataSortedByApprovers = seperateApprovers(data)
-  console.log(dataSortedByApprovers)
   return dataSortedByApprovers.map((data, index) => {
-    const date = new Date(data.last_updated_date).toDateString().split(' ').slice(1).join(' ')
     return (
-      <div className="approver-container" key={date + index}>
+      <div className="approver-container" key={data.dateToDisplay + index}>
         <p className="status-header">{data.status}</p>
         <div className="approver-item">
           <div className="number-display">
@@ -21,16 +19,20 @@ const ApproverLayout = ({ data }) => {
               <p className="approver-name">{data.approver.first_name} {data.approver.last_name}</p>
               <p className="approver-details">({data.approver.email})</p>
             </div>
-            <p className="approver-details">Approved {date}</p>
+            <p className="approver-details">Approved {data.dateToDisplay}</p>
           </div>
           {
             data.status === 'Approved' && (
-              <div className="tick-icon"><img src={process.env.PUBLIC_URL + '/assets/tickicon.svg'} /></div>
+              <div className="tick-icon-container">
+                <img src={process.env.PUBLIC_URL + '/assets/tickicon.svg'} alt={''} />
+              </div>
             )
           }
           {
             data.status === 'Pending' && (
-              <div className="tick-icon"><img src={process.env.PUBLIC_URL + '/assets/notickicon.svg'} /></div>
+              <div className="tick-icon-container">
+                <img src={process.env.PUBLIC_URL + '/assets/notickicon.svg'} alt={''} />
+              </div>
             )
           }
         </div>
@@ -54,21 +56,32 @@ const seperateApprovers = (data) => {
     switch (approver.status) {
       case 'accepted':
         approver.status = 'Approved'
-        approver.dateToDisplay = new Date(data.last_updated_date).toDateString().split(' ').slice(1).join(' ')
+        approver.dateToDisplay = formatDate(data.last_updated_date)
         break;
       case 'created':
         approver.status = 'Created'
-        approver.dateToDisplay = new Date(data.created_date).toDateString().split(' ').slice(1).join(' ')
+        approver.dateToDisplay = formatDate(data.created_date)
         break
       case 'pending':
         approver.status = 'Pending'
-        approver.dateToDisplay = new Date(data.last_notified_time).toDateString().split(' ').slice(1).join(' ')
+        approver.dateToDisplay = formatDate(data.last_notified_time)
         break
       default:
         return null
     }
     return approver
   })
+}
+
+/**
+ * Function to format the date correctly and display it
+ * @param {String} date 
+ */
+const formatDate = (date) => {
+  let formattedDate = new Date(date).toDateString().split(' ').slice(1)
+  let dateInDigits = formattedDate[1]
+  formattedDate.splice(1, 1, `${dateInDigits},`)
+  return formattedDate.join(' ')
 }
 
 export default ApproverLayout

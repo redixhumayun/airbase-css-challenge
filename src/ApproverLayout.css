@@ -78,7 +78,7 @@ img {
 }
 
 /*Aligning the tick icon correctly*/
-.tick-icon {
+.tick-icon-container {
   margin-right: 0px;
   margin-left: auto;
 }
